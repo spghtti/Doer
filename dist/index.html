@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="reset.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="main.css" type="text/css" media="all" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="data:;base64,=" />
+    <title>Doer</title>
+  </head>
+  <body>
+    <header id="header">
+      <div class="headline" id="doer">
+        <h1>Doer</h1>
+      </div>
+    </header>
+    <div id="content">
+      <div id="sidebar">
+        <div class="headline">
+          <h2>Projects</h2>
+        </div>
+        <div id="projects">
+          <div class="inline-project">Project 1</div>
+          <div class="inline-project">Project 2</div>
+          <div class="inline-project">Project 3</div>
+        </div>
+      </div>
+      <div id="main">
+        <div class="headline" id="headline">
+          <h2>Tasks</h2>
+        </div>
+        <div id="taskList">
+          <div class="inline-task">
+            <input type="checkbox" value="" class="task" id="checkbox1" />
+            <label for="checkbox1">Task 1</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="trigger" id="add-project">+</button>
+    <div class="modal">
+      <div class="modal-content">
+        <div class="modal-headline">Add a task</div>
+        <span class="close-button">&times;</span>
+        <form id="form">
+          <label for="task"><b>Task</b></label>
+          <input
+            class="input"
+            type="text"
+            placeholder="Study Javascript"
+            name="task"
+            autocomplete="off"
+            required
+          />
+          <label for="description"><b>Description</b></label>
+          <input
+            class="input"
+            type="text"
+            name="description"
+            placeholder="Research algorithms"
+            autocomplete="off"
+            required
+          />
+          <label for="due-date"><b>Due date</b></label>
+          <input class="input" type="date" name="due-date" autocomplete="off" />
+          <label for="priority"><b>High priority</b></label>
+          <input type="checkbox" name="priority" id="priority" value="yes" />
+          <button id="submit" type="submit" value="Submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <footer id="footer"></footer>
+    <script src="main.js"></script>
+  </body>
+</html>

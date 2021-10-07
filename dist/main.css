@@ -1,0 +1,177 @@
+ul,
+li,
+body,
+h2 {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+header,
+body {
+  width: 100%;
+}
+#header {
+  display: flex;
+  height: 150px;
+  width: 100%;
+  color: rgb(65, 65, 65);
+  align-items: center;
+  text-align: center;
+  justify-content: left;
+  justify-content: left;
+  font-family: "Fredoka One", cursive;
+}
+#header,
+#content {
+  background-color: #ede74a;
+}
+h1 {
+  font-family: "Fredoka One", cursive;
+  font-size: 50px;
+}
+h2 {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+}
+#sidebar {
+  display: flex;
+  min-width: 250px;
+  max-width: 30%;
+  height: 100%;
+  position: relative;
+  flex-direction: column;
+  flex: 1;
+  flex-shrink: 0;
+  border-top-left-radius: 30px;
+  background-color: rgb(65, 65, 65);
+  color: white;
+}
+#content {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 175px);
+  flex: 1;
+}
+#doer {
+  margin-top: 0px;
+}
+#main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex-direction: column;
+  flex: 1;
+  background-color: white;
+  border-top-right-radius: 30px;
+  overflow: hidden;
+}
+#footer {
+  border: solid yellow;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.headline {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#taskList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+.inline-task,
+.inline-project {
+  display: inline-block;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+#projects {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+#add-project {
+  position: sticky;
+  bottom: 70px;
+  left: 95%;
+  height: 50px;
+  width: 50px;
+  border-radius: 20px;
+}
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+}
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+.close-button:hover {
+  background-color: darkgray;
+}
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+form {
+  padding: 16px;
+  display: inline-block;
+}
+.input {
+  width: 100%;
+  font-size: 16px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+#submit {
+  width: 100%;
+  font-size: 20px;
+  padding: 15px;
+  margin-top: 20px;
+  display: inline-block;
+  border: 1px solid black;
+  background: #f1f1f1;
+}
+.modal-headline {
+  font-size: 20px;
+  width: 100%;
+}
