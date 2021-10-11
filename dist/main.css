@@ -131,7 +131,8 @@ h2 {
   bottom: 70px;
   height: auto;
   width: auto;
-  margin-left: calc(100vh - 200px);
+  margin-left: calc(100vh - 150px);
+  border: 1px solid black;
 }
 #add-task {
   border-radius: 50%;
