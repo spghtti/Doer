@@ -1,4 +1,3 @@
-import { createTask } from "./taskCreate";
 import { getTask } from "./getTask";
 
 const modal = document.querySelector(".modal");
@@ -7,6 +6,7 @@ const closeButton = document.querySelector(".close-button");
 const form = document.getElementById("form");
 
 const tasks = [];
+const projects = [];
 
 function toggleModal() {
   modal.classList.toggle("show-modal");
@@ -22,5 +22,6 @@ trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
 form.addEventListener("submit", getTask);
+form.addEventListener("submit", toggleModal);
 
 export { tasks };

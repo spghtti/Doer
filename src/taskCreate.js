@@ -1,7 +1,6 @@
-function createTask(title, description, dueDate, priority) {
+function createTask(title, dueDate, priority) {
   return {
     title: title,
-    description: description,
     dueDate: dueDate,
     priority: priority,
   };

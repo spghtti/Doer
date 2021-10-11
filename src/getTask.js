@@ -11,25 +11,39 @@ function updateTasks(newTask) {
   const div = document.createElement("div");
   const input = document.createElement("input");
   const label = document.createElement("label");
+  const img = document.createElement("img");
+  const date = document.createElement("div");
 
   div.className = "inline-task";
 
   input.type = "checkbox";
   input.className = "task";
-  input.id = newTask.title;
+  input.id = `task-${newTask.title}`;
 
-  label.htmlFor = newTask.title;
-  label.innerHTML = `Task: ${newTask.title}, Description: ${newTask.description}, Due: ${newTask.dueDate}`;
+  label.htmlFor = `task-${newTask.title}`;
+  label.type = "textarea";
+  label.innerHTML = `${newTask.title} `;
 
   taskList.appendChild(div);
   div.appendChild(input);
   div.appendChild(label);
+
+  if (newTask.priority) {
+    img.className = "icon";
+    img.src = "images/priority.png";
+    div.appendChild(img);
+  }
+
+  if (newTask.dueDate !== "") {
+    date.className = "date";
+    date.innerHTML = newTask.dueDate;
+    div.appendChild(date);
+  }
 }
 
 function getTask(event) {
   event.preventDefault();
   const title = document.getElementsByName("task")[0].value;
-  const description = document.getElementsByName("description")[0].value;
   const dueDate = document.getElementsByName("due-date")[0].value;
   const priority = document.getElementById("priority");
   let isPriority = true;
@@ -39,7 +53,7 @@ function getTask(event) {
     isPriority = false;
   }
 
-  const newTask = createTask(title, description, dueDate, isPriority);
+  const newTask = createTask(title, dueDate, isPriority);
   updateTasks(newTask);
 
   console.log(newTask);

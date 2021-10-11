@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" href="reset.css" type="text/css" media="all" />
     <link rel="stylesheet" href="main.css" type="text/css" media="all" />
+    <link rel="icon" href="data:;base64,=">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,18 +39,23 @@
           <h2>Tasks</h2>
         </div>
         <div id="taskList">
-          <div class="inline-task">
-            <input type="checkbox" value="" class="task" id="checkbox1" />
-            <label for="checkbox1">Task 1</label>
-          </div>
         </div>
       </div>
     </div>
-    <button class="trigger" id="add-project">+</button>
+    <div class="buttons">
+      <div class="hideme">
+        <button class="button" id="add-project"></button>
+      </div class="button">
+      <button class="trigger" id="add-task"></button>
+      </div>
+    </div>
+    <!-- Modal to input task -->
     <div class="modal">
       <div class="modal-content">
-        <div class="modal-headline">Add a task</div>
-        <span class="close-button">&times;</span>
+        <div class="modal-headline">
+          Add a task
+          <span class="close-button">&times;</span>
+        </div>
         <form id="form">
           <label for="task"><b>Task</b></label>
           <input
@@ -60,24 +66,17 @@
             autocomplete="off"
             required
           />
-          <label for="description"><b>Description</b></label>
-          <input
-            class="input"
-            type="text"
-            name="description"
-            placeholder="Research algorithms"
-            autocomplete="off"
-            required
-          />
           <label for="due-date"><b>Due date</b></label>
           <input class="input" type="date" name="due-date" autocomplete="off" />
           <label for="priority"><b>High priority</b></label>
-          <input type="checkbox" name="priority" id="priority" value="yes" />
+          <input type="checkbox" name="priority" id="priority" value="yes" autocomplete="off"/>
           <button id="submit" type="submit" value="Submit">Submit</button>
         </form>
       </div>
     </div>
-    <footer id="footer"></footer>
+    <footer id="footer">
+      <p>Copyright © 2021 spghtti. Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a></a> and <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a></p>.</p>
+    </footer>
     <script src="main.js"></script>
   </body>
 </html>
