@@ -132,7 +132,6 @@ h2 {
   height: auto;
   width: auto;
   margin-left: calc(100vh - 150px);
-  border: 1px solid black;
 }
 #add-task {
   border-radius: 50%;
@@ -176,7 +175,8 @@ h2 {
 .hideme {
   display: none;
 }
-.modal {
+.modal,
+.project-modal {
   position: fixed;
   left: 0;
   top: 0;
@@ -198,7 +198,8 @@ h2 {
   width: 24rem;
   border-radius: 0.5rem;
 }
-.close-button {
+.close-button,
+.project-close-button {
   float: right;
   width: 1.5rem;
   line-height: 1.5rem;

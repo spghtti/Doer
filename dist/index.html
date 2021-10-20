@@ -29,9 +29,10 @@
           <h2>Projects</h2>
         </div>
         <div id="projects">
-          <div class="inline-project">Project 1</div>
-          <div class="inline-project">Project 2</div>
-          <div class="inline-project">Project 3</div>
+          <div class="inline-project">
+            <input id="projectName" class=project type="checkbox">
+            <label for="projectName">Project 1</label>
+          </div>
         </div>
       </div>
       <div id="main">
@@ -44,7 +45,7 @@
     </div>
     <div class="buttons">
       <div class="hideme">
-        <button class="button" id="add-project"></button>
+        <button class="project-trigger" id="add-project"></button>
       </div class="button">
       <button class="trigger" id="add-task"></button>
       </div>
@@ -70,6 +71,27 @@
           <input class="input" type="date" name="due-date" autocomplete="off" />
           <label for="priority"><b>High priority</b></label>
           <input type="checkbox" name="priority" id="priority" value="yes" autocomplete="off"/>
+          <button id="submit" type="submit" value="Submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <!-- Modal to input project -->
+    <div class="project-modal">
+      <div class="modal-content">
+        <div class="modal-headline">
+          Add a project
+          <span class="project-close-button">&times;</span>
+        </div>
+        <form id="project-form">
+          <label for="project"><b>Project</b></label>
+          <input
+            class="input"
+            type="text"
+            placeholder="Dissertation on black holes"
+            name="project"
+            autocomplete="off"
+            required
+          />
           <button id="submit" type="submit" value="Submit">Submit</button>
         </form>
       </div>

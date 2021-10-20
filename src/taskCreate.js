@@ -1,8 +1,9 @@
-function createTask(title, dueDate, priority) {
+function createTask(title, dueDate, priority, project) {
   return {
     title: title,
     dueDate: dueDate,
     priority: priority,
+    project: project,
   };
 }
 
