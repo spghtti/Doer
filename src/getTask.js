@@ -46,6 +46,7 @@ function getTask(event) {
   const title = document.getElementsByName("task")[0].value;
   const dueDate = document.getElementsByName("due-date")[0].value;
   const priority = document.getElementById("priority");
+  const project = document.getElementById("whichProject").value;
   let isPriority = true;
   if (priority.checked) {
     isPriority = true;
@@ -53,7 +54,7 @@ function getTask(event) {
     isPriority = false;
   }
 
-  const newTask = createTask(title, dueDate, isPriority);
+  const newTask = createTask(title, dueDate, isPriority, project);
   updateTasks(newTask);
 
   console.log(newTask);

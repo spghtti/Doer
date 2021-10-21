@@ -69,8 +69,12 @@
           />
           <label for="due-date"><b>Due date</b></label>
           <input class="input" type="date" name="due-date" autocomplete="off" />
+          <label for="whichProject"><b>Project</b></label>
+          <select name="whichProject" id="whichProject" class="input">
+            <option value="" selected>None</option>
+          </select>
           <label for="priority"><b>High priority</b></label>
-          <input type="checkbox" name="priority" id="priority" value="yes" autocomplete="off"/>
+          <input type="checkbox" class="" name="priority" id="priority" value="yes" autocomplete="off"/>
           <button id="submit" type="submit" value="Submit">Submit</button>
         </form>
       </div>

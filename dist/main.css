@@ -6,7 +6,9 @@ footer,
 div,
 p,
 input,
-label {
+label,
+select,
+button {
   font-family: "IBM Plex Sans Arabic", sans-serif;
 }
 header,
@@ -220,6 +222,11 @@ h2 {
 form {
   padding: 16px;
   display: inline-block;
+  width: 80%;
+}
+#whichProject {
+  display: inline-block;
+  width: 21em;
 }
 .input {
   width: 100%;
@@ -231,7 +238,7 @@ form {
   background: #f1f1f1;
 }
 #submit {
-  width: 100%;
+  width: 17em;
   font-size: 20px;
   padding: 15px;
   margin-top: 20px;

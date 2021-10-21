@@ -1,5 +1,6 @@
 import { getTask } from "./getTask";
 import { getProject } from "./getProject";
+import { updateProjects, populateProject } from "./updateProjects";
 
 const modal = document.querySelector(".modal");
 const trigger = document.querySelector(".trigger");
@@ -34,6 +35,7 @@ function projectWindowOnClick(event) {
 }
 
 trigger.addEventListener("click", toggleModal);
+trigger.addEventListener("click", updateProjects);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
 form.addEventListener("submit", getTask);
