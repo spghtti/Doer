@@ -1,3 +1,4 @@
+import { LibraryTemplatePlugin } from "webpack";
 import { projects } from "./index.js";
 
 function updateProjects(newProject) {
@@ -8,6 +9,7 @@ function updateProjects(newProject) {
   const div = document.createElement("div");
   const input = document.createElement("input");
   const label = document.createElement("label");
+  const button = document.createElement("button");
 
   div.className = "inline-project";
 
@@ -17,11 +19,14 @@ function updateProjects(newProject) {
 
   label.htmlFor = `project-${newProject}`;
   label.type = "textarea";
-  label.innerHTML = `${newProject} `;
+
+  button.className = "project-button";
+  button.innerHTML = `${newProject}`;
 
   projectList.appendChild(div);
   div.appendChild(input);
   div.appendChild(label);
+  label.appendChild(button);
 }
 
 function getProject(event) {

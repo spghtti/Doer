@@ -2,6 +2,7 @@ ul,
 li,
 body,
 h2,
+h3,
 footer,
 div,
 p,
@@ -97,6 +98,29 @@ h2 {
   width: 100%;
   margin-top: 20px;
   margin-left: 20px;
+  align-items: center;
+}
+.headlineDiv {
+  display: flex;
+  width: 100%;
+  margin-left: 20px;
+  align-items: center;
+}
+#show-all {
+  display: flex;
+  margin-right: 4em;
+  flex-direction: row-reverse;
+  align-items: center;
+  height: 30px;
+}
+#show-all-button {
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  font-size: 14px;
+}
+#tasks {
+  height: 30px;
+  align-items: center;
 }
 #taskList {
   display: flex;
@@ -252,4 +276,10 @@ form {
   width: 100%;
   font-family: "IBM Plex Sans Arabic", sans-serif;
   font-weight: 700;
+}
+.project-button {
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  font-size: 16px;
 }
