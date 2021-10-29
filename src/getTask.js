@@ -1,5 +1,6 @@
 import { createTask } from "./taskCreate";
 import { tasks } from "./index.js";
+import { completeTask } from "./completed";
 
 // Need to make this function update the task list
 
@@ -19,6 +20,8 @@ function updateTasks(newTask) {
   input.type = "checkbox";
   input.className = "task";
   input.id = `task-${newTask.title}`;
+
+  input.addEventListener("click", completeTask);
 
   label.htmlFor = `task-${newTask.title}`;
   label.type = "textarea";
@@ -57,8 +60,8 @@ function getTask(event) {
   const newTask = createTask(title, dueDate, isPriority, project);
   updateTasks(newTask);
 
-  console.log(newTask);
-  console.log(tasks);
+  console.log(`New task created: ${newTask.title}`);
+  console.table(tasks);
 }
 
 export { getTask };

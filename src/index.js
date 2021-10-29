@@ -1,6 +1,7 @@
 import { getTask } from "./getTask";
 import { getProject } from "./getProject";
 import { updateProjects, populateProject } from "./updateProjects";
+import { completeTask } from "./completed";
 
 const modal = document.querySelector(".modal");
 const trigger = document.querySelector(".trigger");
