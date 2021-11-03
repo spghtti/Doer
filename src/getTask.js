@@ -2,8 +2,6 @@ import { createTask } from "./taskCreate";
 import { tasks } from "./index.js";
 import { completeTask } from "./completed";
 
-// Need to make this function update the task list
-
 function updateTasks(newTask) {
   tasks.push(newTask);
 

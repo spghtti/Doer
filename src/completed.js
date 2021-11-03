@@ -1,5 +1,6 @@
-import { projects, tasks } from "./index.js";
+import { tasks } from "./index.js";
 
+// Refreshes task list
 function refresh() {
   const allTasks = document.getElementById("taskList");
 
@@ -49,6 +50,7 @@ function refresh() {
   }
 }
 
+// Function to complete task
 function completeTask() {
   const taskList = document.querySelectorAll(".task");
 
@@ -64,4 +66,4 @@ function completeTask() {
   }
 }
 
-export { completeTask };
+export { completeTask, refresh };

@@ -1,7 +1,7 @@
 import { getTask } from "./getTask";
 import { getProject } from "./getProject";
 import { updateProjects, populateProject } from "./updateProjects";
-import { completeTask } from "./completed";
+import { refresh } from "./completed";
 
 const modal = document.querySelector(".modal");
 const trigger = document.querySelector(".trigger");
@@ -11,6 +11,7 @@ const closeButton = document.querySelector(".close-button");
 const projectCloseButton = document.querySelector(".project-close-button");
 const form = document.getElementById("form");
 const projectForm = document.getElementById("project-form");
+const showAllButton = document.getElementById("show-all-button");
 
 const tasks = [];
 const projects = [];
@@ -41,6 +42,7 @@ closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
 form.addEventListener("submit", getTask);
 form.addEventListener("submit", toggleModal);
+showAllButton.addEventListener("click", refresh);
 
 // window.addEventListener("click", toggleProjectModal);
 projectCloseButton.addEventListener("click", toggleProjectModal);
