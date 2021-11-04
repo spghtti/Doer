@@ -15,6 +15,8 @@ const showAllButton = document.getElementById("show-all-button");
 const tasks = [];
 const projects = [];
 
+console.log("");
+
 function toggleModal() {
   modal.classList.toggle("show-modal");
 }
