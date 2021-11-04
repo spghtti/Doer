@@ -1,7 +1,6 @@
 import { getTask } from "./getTask";
 import { getProject } from "./getProject";
-import { updateProjects, populateProject } from "./updateProjects";
-import { refresh } from "./completed";
+import { updateProjects, showAll } from "./updateProjects";
 
 const modal = document.querySelector(".modal");
 const trigger = document.querySelector(".trigger");
@@ -37,17 +36,18 @@ function projectWindowOnClick(event) {
 }
 
 trigger.addEventListener("click", toggleModal);
-trigger.addEventListener("click", updateProjects);
+
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
 form.addEventListener("submit", getTask);
 form.addEventListener("submit", toggleModal);
-showAllButton.addEventListener("click", refresh);
+showAllButton.addEventListener("click", showAll);
 
 // window.addEventListener("click", toggleProjectModal);
 projectCloseButton.addEventListener("click", toggleProjectModal);
 projectTrigger.addEventListener("click", toggleProjectModal);
 projectForm.addEventListener("submit", getProject);
 projectForm.addEventListener("submit", toggleProjectModal);
+projectForm.addEventListener("submit", updateProjects);
 
 export { tasks, projects };

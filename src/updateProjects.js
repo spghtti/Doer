@@ -1,4 +1,4 @@
-import { projects } from "./index.js";
+import { tasks, projects } from "./index.js";
 import { completeProject } from "./getProject";
 
 // Populates modal dropdown with projects
@@ -13,6 +13,17 @@ function populateProject(value) {
 }
 
 function updateProjects() {
+  const projectList = document.getElementById("whichProject");
+
+  while (projectList.firstChild) {
+    projectList.removeChild(projectList.lastChild);
+  }
+
+  const option = document.createElement("option");
+  option.value = "";
+  option.innerHTML = "None";
+
+  projectList.appendChild(option);
   projects.forEach(populateProject);
 }
 
@@ -22,9 +33,6 @@ function refreshProjects() {
   while (allProjects.firstChild) {
     allProjects.removeChild(allProjects.lastChild);
   }
-
-  console.log("Done");
-  console.log("length:" + projects.length);
 
   for (let i = 0; i < projects.length; i++) {
     const div = document.createElement("div");
@@ -53,4 +61,24 @@ function refreshProjects() {
   }
 }
 
-export { updateProjects, refreshProjects };
+function listProjectTasks(event) {
+  const taskList = document.querySelectorAll(".inline-task");
+
+  for (let i = 0; i < taskList.length; i++) {
+    if (tasks[i].project === event.target.innerHTML) {
+      taskList[i].style.display = "block";
+    } else {
+      taskList[i].style.display = "none";
+    }
+  }
+}
+
+function showAll() {
+  const allTasks = document.querySelectorAll(".inline-task");
+
+  for (let i = 0; i < allTasks.length; i++) {
+    allTasks[i].style.display = "block";
+  }
+}
+
+export { updateProjects, refreshProjects, listProjectTasks, showAll };

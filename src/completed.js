@@ -8,12 +8,7 @@ function refresh() {
     allTasks.removeChild(allTasks.lastChild);
   }
 
-  console.log("Done");
-  console.log("length:" + tasks.length);
-
   for (let i = 0; i < tasks.length; i++) {
-    console.log("Flag");
-
     const div = document.createElement("div");
     const input = document.createElement("input");
     const label = document.createElement("label");
@@ -54,13 +49,10 @@ function refresh() {
 function completeTask() {
   const taskList = document.querySelectorAll(".task");
 
-  console.table(taskList.length);
-
   for (let i = 0; i < taskList.length; i++) {
     if (taskList[i].checked) {
       tasks.splice(i, 1);
     }
-    console.log(tasks);
 
     setTimeout(refresh, 500);
   }

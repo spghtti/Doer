@@ -57,9 +57,6 @@ function getTask(event) {
 
   const newTask = createTask(title, dueDate, isPriority, project);
   updateTasks(newTask);
-
-  console.log(`New task created: ${newTask.title}`);
-  console.table(tasks);
 }
 
 export { getTask };

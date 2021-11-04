@@ -1,7 +1,7 @@
 import { LibraryTemplatePlugin } from "webpack";
 import { refresh } from "./completed.js";
 import { tasks, projects } from "./index.js";
-import { refreshProjects } from "./updateProjects";
+import { refreshProjects, listProjectTasks } from "./updateProjects";
 
 // Updates project in sidebar
 function updateProjects(newProject) {
@@ -27,6 +27,9 @@ function updateProjects(newProject) {
 
   button.className = "project-button";
   button.innerHTML = `${newProject}`;
+  button.value = `${newProject}`;
+
+  button.addEventListener("click", listProjectTasks);
 
   projectList.appendChild(div);
   div.appendChild(input);
@@ -40,15 +43,11 @@ function getProject(event) {
   const newProject = document.getElementsByName("project")[0].value;
 
   updateProjects(newProject);
-  console.log(newProject);
-  console.log(projects);
 }
 
 // Deletes project
 function completeProject() {
   const projectList = document.querySelectorAll(".project");
-
-  console.table(projectList.length);
 
   for (let i = 0; i < projectList.length; i++) {
     if (projectList[i].checked) {
@@ -58,6 +57,7 @@ function completeProject() {
       break;
     }
   }
+  refreshProjectDropdown();
   refresh();
   refreshProjects();
 }
@@ -67,6 +67,19 @@ function findAndDelete(project) {
     if (tasks[i].project === project) {
       tasks.splice(i, 1);
     }
+  }
+}
+
+function refreshProjectDropdown() {
+  const projectDropdown = document.getElementById("whichProject");
+
+  for (let i = 0; i < projects.length; i++) {
+    const option = document.createElement("option");
+
+    option.value = projects[i];
+    option.innerHTML = projects[i];
+
+    projectDropdown.appendChild(option);
   }
 }
 
