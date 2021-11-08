@@ -2,11 +2,13 @@ import { LibraryTemplatePlugin } from "webpack";
 import { refresh } from "./completed.js";
 import { tasks, projects } from "./index.js";
 import { refreshProjects, listProjectTasks } from "./updateProjects";
+import { addProjectsToStorage, setProjects } from "./localStorage";
 
 // Updates project in sidebar
 function updateProjects(newProject) {
   projects.push(newProject);
 
+  //Adds project to DOM
   const projectList = document.getElementById("projects");
 
   const div = document.createElement("div");
@@ -35,6 +37,8 @@ function updateProjects(newProject) {
   div.appendChild(input);
   div.appendChild(label);
   label.appendChild(button);
+
+  addProjectsToStorage();
 }
 
 // Grabs project name from modal
@@ -60,6 +64,7 @@ function completeProject() {
   refreshProjectDropdown();
   refresh();
   refreshProjects();
+  addProjectsToStorage();
 }
 
 function findAndDelete(project) {

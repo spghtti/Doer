@@ -1,6 +1,7 @@
 import { getTask } from "./getTask";
 import { getProject } from "./getProject";
 import { updateProjects, showAll } from "./updateProjects";
+import { setProjects, storageAvailable } from "./localStorage";
 
 const modal = document.querySelector(".modal");
 const trigger = document.querySelector(".trigger");
@@ -15,7 +16,15 @@ const showAllButton = document.getElementById("show-all-button");
 const tasks = [];
 const projects = [];
 
-console.log("");
+if (
+  storageAvailable("localStorage") &&
+  localStorage.getItem("storedProjects")
+) {
+  console.log("Setting projects!");
+  setProjects();
+} else {
+  // Too bad, no localStorage for us
+}
 
 function toggleModal() {
   modal.classList.toggle("show-modal");
