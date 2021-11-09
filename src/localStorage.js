@@ -1,6 +1,7 @@
 import { tasks, projects } from "./index.js";
 import { completeProject } from "./getProject";
 import { listProjectTasks } from "./updateProjects";
+import { completeTask } from "./completed";
 
 //Checks if localStorage is available and usable
 function storageAvailable(type) {
@@ -31,17 +32,29 @@ function storageAvailable(type) {
 }
 
 const myProjects = JSON.parse(localStorage.getItem("storedProjects"));
+const myTasks = JSON.parse(localStorage.getItem("storedTasks"));
 
 function addProjectsToStorage() {
   localStorage.setItem("storedProjects", JSON.stringify(projects));
 }
 
+function addTasksToStorage() {
+  localStorage.setItem("storedTasks", JSON.stringify(tasks));
+}
+
 //Adds all projects to DOM
 function setProjects() {
-  console.table(myProjects);
   for (let i = 0; i < myProjects.length; i++) {
     projects.push(myProjects[i]);
     setProjectFromStorage(myProjects[i]);
+  }
+}
+
+//Adds all tasks to DOM
+function setTasks() {
+  for (let i = 0; i < myTasks.length; i++) {
+    tasks.push(myTasks[i]);
+    setTasksFromStorage(myTasks[i]);
   }
 }
 
@@ -77,6 +90,50 @@ function setProjectFromStorage(name) {
   label.appendChild(button);
 }
 
+function setTasksFromStorage(task) {
+  const taskList = document.getElementById("taskList");
+
+  const div = document.createElement("div");
+  const input = document.createElement("input");
+  const label = document.createElement("label");
+  const img = document.createElement("img");
+  const date = document.createElement("div");
+
+  div.className = "inline-task";
+
+  input.type = "checkbox";
+  input.className = "task";
+  input.id = `task-${task.title}`;
+
+  input.addEventListener("click", completeTask);
+
+  label.htmlFor = `task-${task.title}`;
+  label.type = "textarea";
+  label.innerHTML = `${task.title} `;
+
+  taskList.appendChild(div);
+  div.appendChild(input);
+  div.appendChild(label);
+
+  if (task.priority) {
+    img.className = "icon";
+    img.src = "images/priority.png";
+    div.appendChild(img);
+  }
+
+  if (task.dueDate !== "") {
+    date.className = "date";
+    date.innerHTML = task.dueDate;
+    div.appendChild(date);
+  }
+}
+
 // Loads tasks and projects from localStorage
 
-export { addProjectsToStorage, setProjects, storageAvailable };
+export {
+  addProjectsToStorage,
+  addTasksToStorage,
+  setProjects,
+  storageAvailable,
+  setTasks,
+};

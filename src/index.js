@@ -1,7 +1,7 @@
 import { getTask } from "./getTask";
 import { getProject } from "./getProject";
 import { updateProjects, showAll } from "./updateProjects";
-import { setProjects, storageAvailable } from "./localStorage";
+import { setProjects, storageAvailable, setTasks } from "./localStorage";
 
 const modal = document.querySelector(".modal");
 const trigger = document.querySelector(".trigger");
@@ -20,8 +20,8 @@ if (
   storageAvailable("localStorage") &&
   localStorage.getItem("storedProjects")
 ) {
-  console.log("Setting projects!");
   setProjects();
+  setTasks();
 } else {
   // Too bad, no localStorage for us
 }

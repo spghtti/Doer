@@ -1,7 +1,9 @@
 import { createTask } from "./taskCreate";
 import { tasks } from "./index.js";
 import { completeTask } from "./completed";
+import { addTasksToStorage } from "./localStorage";
 
+//Adds task to DOM
 function updateTasks(newTask) {
   tasks.push(newTask);
 
@@ -40,8 +42,11 @@ function updateTasks(newTask) {
     date.innerHTML = newTask.dueDate;
     div.appendChild(date);
   }
+
+  addTasksToStorage(newTask);
 }
 
+//Gets task from input form
 function getTask(event) {
   event.preventDefault();
   const title = document.getElementsByName("task")[0].value;
