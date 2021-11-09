@@ -1,0 +1,287 @@
+ul,
+li,
+body,
+h2,
+h3,
+footer,
+div,
+p,
+input,
+label,
+select,
+button {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+header,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+input[type="checkbox"] {
+  cursor: pointer;
+  scale: 1.25;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+#header {
+  display: flex;
+  height: 150px;
+  width: 100%;
+  color: rgb(65, 65, 65);
+  align-items: center;
+  text-align: center;
+  justify-content: left;
+  justify-content: left;
+  font-family: "Fredoka One", cursive;
+}
+#header,
+#content {
+  background-color: #ede74a;
+}
+h1 {
+  font-family: "Fredoka One", cursive;
+  font-size: 50px;
+}
+h2 {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+}
+#sidebar {
+  display: flex;
+  min-width: 250px;
+  max-width: 30%;
+  height: 100%;
+  position: relative;
+  flex-direction: column;
+  flex: 1;
+  flex-shrink: 0;
+  border-top-left-radius: 30px;
+  background-color: rgb(65, 65, 65);
+  color: white;
+}
+#content {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 175px);
+  flex: 1;
+}
+#doer {
+  margin-top: 0px;
+}
+#main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex-direction: column;
+  flex: 1;
+  background-color: white;
+  border-top-right-radius: 30px;
+  overflow: hidden;
+}
+#footer {
+  display: flex;
+  background-color: rgb(104, 104, 104);
+  color: white;
+  height: 50px;
+  width: 100%;
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+}
+.headline {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 20px;
+  align-items: center;
+}
+.headlineDiv {
+  display: flex;
+  width: 100%;
+  margin-left: 20px;
+  align-items: center;
+}
+#show-all {
+  display: flex;
+  margin-right: 4em;
+  flex-direction: row-reverse;
+  align-items: center;
+  height: 30px;
+}
+#show-all-button {
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  font-size: 14px;
+  cursor: pointer;
+}
+#tasks {
+  height: 30px;
+  align-items: center;
+}
+#taskList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+.inline-task,
+.inline-project {
+  display: flex;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  width: 90%;
+}
+.date {
+  margin-left: auto;
+}
+#projects {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  flex-flow: column wrap;
+  position: sticky;
+  bottom: 70px;
+  height: auto;
+  width: auto;
+  margin-left: calc(100vh - 150px);
+}
+#add-task {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-right: 30px;
+  background: url("images/add.png") no-repeat center center;
+  background-size: 50%;
+  background-color: rgb(225, 225, 225);
+  cursor: pointer;
+  border: none;
+}
+#add-project {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  background: url("images/clipboard.png") no-repeat center center;
+  background-size: 50%;
+  background-color: rgb(225, 225, 225);
+  cursor: pointer;
+  border: none;
+}
+#add-task:hover,
+#add-project:hover {
+  filter: brightness(85%);
+}
+.icon {
+  width: 15px;
+  height: 15px;
+  padding-left: 5px;
+}
+.button {
+  border: 1px;
+}
+.buttons:hover .hideme {
+  display: flex;
+  align-self: center;
+}
+.hideme {
+  display: none;
+}
+.modal,
+.project-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+}
+.close-button,
+.project-close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+.close-button:hover {
+  background-color: darkgray;
+}
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+form {
+  padding: 16px;
+  display: inline-block;
+  width: 80%;
+}
+#whichProject {
+  display: inline-block;
+  width: 21em;
+}
+.input {
+  width: 100%;
+  font-size: 16px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+#submit {
+  width: 17em;
+  font-size: 20px;
+  padding: 15px;
+  margin-top: 20px;
+  display: inline-block;
+  border: 0px;
+  background: lightgray;
+  border-radius: 5px;
+}
+.modal-headline {
+  font-size: 20px;
+  width: 100%;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 700;
+}
+.project-button {
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
