@@ -1,5 +1,5 @@
 {
-  "name": "todone",
+  "name": "Doer",
   "version": "1.0.0",
   "description": "",
   "main": "script.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spghtti/toDone.git"
+    "url": "git+https://github.com/spghtti/Doer.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/spghtti/toDone/issues"
+    "url": "https://github.com/spghtti/Doer/issues"
   },
-  "homepage": "https://github.com/spghtti/toDone#readme",
+  "homepage": "spghtti.github.io/Doer",
   "devDependencies": {
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0"
