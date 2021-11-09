@@ -1,4 +1,5 @@
 import { tasks } from "./index.js";
+import { addTasksToStorage } from "./localStorage";
 
 // Refreshes task list
 function refresh() {
@@ -56,6 +57,7 @@ function completeTask() {
 
     setTimeout(refresh, 500);
   }
+  addTasksToStorage();
 }
 
 export { completeTask, refresh };
