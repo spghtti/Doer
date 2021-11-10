@@ -2,7 +2,7 @@
 
 ## About this project
 
-This is a solution to the Odin's Project's to-do list [assignment](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/todo-list).
+This is a solution to the Odin's Project's to-do list [assignment](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/todo-list). This assignment is part of its full-stack JavaScript course.
 
 ## Live project demo
 :point_right: https://spghtti.github.io/doer/ :point_left:
