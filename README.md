@@ -12,7 +12,7 @@ This is a solution to the Odin's Project's to-do list [assignment](https://www.t
 - [Vanilla Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [Node](https://www.npmjs.com/)
+- [npm](https://www.npmjs.com/)
 - [Webpack](https://webpack.js.org/)
 
 
