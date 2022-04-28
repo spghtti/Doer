@@ -66,7 +66,7 @@ function listProjectTasks(event) {
 
   for (let i = 0; i < taskList.length; i++) {
     if (tasks[i].project === event.target.innerHTML) {
-      taskList[i].style.display = 'block';
+      taskList[i].style.display = 'flex';
     } else {
       taskList[i].style.display = 'none';
     }
@@ -75,7 +75,7 @@ function listProjectTasks(event) {
 
 function showAll() {
   const allTasks = document.querySelectorAll('.inline-task');
-  console.log('test');
+  console.log('t!est');
   for (let i = 0; i < allTasks.length; i++) {
     allTasks[i].style.display = 'flex';
   }
