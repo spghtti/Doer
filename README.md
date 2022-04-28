@@ -2,9 +2,11 @@
 
 ## About this project
 
-This is a solution to the Odin's Project's to-do list [assignment](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/todo-list). This assignment is part of its full-stack JavaScript course.
+A simple to-do list app.
+This is a solution to the Odin's Project's to-do list [assignment](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/todo-list) (part of its full-stack JavaScript course).
 
 ## Live project demo
+
 :point_right: https://spghtti.github.io/doer/ :point_left:
 
 ## Built With
@@ -12,9 +14,6 @@ This is a solution to the Odin's Project's to-do list [assignment](https://www.t
 - [Vanilla Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [Node](https://www.npmjs.com/)
-- [Webpack](https://webpack.js.org/)
-
 
 ## License
 
